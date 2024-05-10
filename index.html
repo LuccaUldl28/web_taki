@@ -1,282 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us | 滝川堂 TAKIGAWA</title>
+    <title>No.7 Lucca - 個人作品集</title>
     <link rel="stylesheet" href="./css/bootstrap.min-takigawa.css">
     <link rel="stylesheet" href="./css/myall.css">
-
     <style>
-        .banner {
-            height: 300px;
-            background-image: url(images/shaoziJP/fengmian/ab04.jpg);
+        .section01 {
+            height: 100vh;
+            background-color: var(--crSnsk04);
+            position: relative;
+        }
+
+        .box01 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--crSnsk01);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .box02 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--crSnsk03);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .box03 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--crSnsk03);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .box04 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--crSnsk02);
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .logo {
+            position: absolute;
+            top: 50px;
+            bottom: 50px;
+            left: 50px;
+            right: 50px;
+            background-image: url(images/man02.avif);
+            background-attachment: fixed;
         }
 
         .bg-cover {
-            background-position: center 20%;
+            background-position: center center;
             background-size: cover;
         }
 
-        .timeline-section {
-            position: relative;
-        }
-
-        .timeline-section::before {
+        .user_text {
             position: absolute;
-            content: "";
-            top: 0;
-            bottom: 0;
-            width: 5px;
-            background-color: var(--linese);
-            left: 50%;
-            transform: translateX(-50%);
+            top: 60%;
+            left: 55%;
+            background-color: rgba(50 , 50, 5, 0.4);
+            color: var(--textcolor03);
+            text-align: center;
+            padding: 15px;
+            border: 3px solid var(--textcolor02);
+            border-radius: 10px;
+            box-shadow: 2px 2px 15px 2px var(--textcolor02);
         }
 
-        .timeline-section-pointer {
-            position: relative;
+        .user_text .h1 {
+            font-size: 72px;
         }
 
-        .timeline-section-pointer::before {
-            position: absolute;
-            content: "";
-            width: 20px;
-            height: 20px;
+        .user_text p {
+            font-size: 24px;
+
+        }
+
+        .section02_box01 {
+            width: 320px;
+            height: 320px;
+            background-color: #c23a3a;
             border-radius: 50%;
-            background-color: rgb(33, 37, 41);
-            border: 5px solid var(--linese);
-            left: 50%;
-            transform: translateX(-50%);
+            background-image: linear-gradient(310deg, rgba(22, 22, 22, 0.5), rgba(87, 87, 87, 0.1)), url(./images/shaoziJP/home/old01.avif);
+            background-position: center;
+            text-align: center;
+            line-height: 320px;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 0;
+        }
+
+        .section02_box01 a {
+            text-decoration: none;
+            font-size: 24px;
+            color: var(--textcolor03);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px 2px #f1f3ef;
+        }
+
+        .section02_box01::before {
+            background-image: linear-gradient(310deg, rgba(22, 22, 22, 0.8), rgba(43, 43, 43, 0.5)), url(./images/shaoziJP/home/old04.avif);
+            background-position: center 90%;
+            background-size: 320px;
+            border-radius: 50%;
+            
+            content: '';
+            position: absolute;
+            left: 0;
             top: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 1.5s;
+            z-index: -1;
         }
 
-        .timeline-section-pointer:hover::before {
-            width: 25px;
-            height: 25px;
-            border: 5px solid goldenrod;
-            background-color: rgb(231, 214, 167);
-            color: var(--taki02);
-            animation: neon_ab 0.8s ease-in-out infinite alternate;
+        .section02_box01:hover::before {
+            opacity: 1;
         }
 
-        @keyframes neon_ab {
-            from {
-                box-shadow: 0 0 10px var(--taki01), 0 0 20px var(--taki01), 0 0 30px var(--taki01), 0 0 40px var(--taki04),
-                    0 0 70px var(--taki04), 0 0 80px var(--taki04), 0 0 100px var(--taki04), 0 0 150px var(--taki04);
+        .section02_box02 {
+            width: 320px;
+            height: 320px;
+            background-color: #c23a3a;
+            border-radius: 50%;
+            background-image: linear-gradient(180deg, rgba(35, 38, 206, 0.1), rgba(222, 180, 9, 0.4)), url(images/man03.avif);
+            text-align: center;
+            line-height: 320px;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section02_box02 a {
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--textcolor03);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px 2px #f1f3ef;
+        }
+
+        .section02_box02 a:hover {
+            box-shadow: 2px 2px 20px 2px var(--crAK03);
+        }
+
+        .section02_box03 {
+            width: 320px;
+            height: 320px;
+            background-color: #c23a3a;
+            border-radius: 50%;
+            background-image: linear-gradient(180deg, rgba(35, 38, 206, 0.1), rgba(222, 180, 9, 0.4)), url(images/man07.avif);
+            text-align: center;
+            line-height: 320px;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section02_box03 a {
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--textcolor03);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px 2px #f1f3ef;
+        }
+
+        .section02_box03 a:hover {
+            box-shadow: 2px 2px 20px 2px var(--crAK03);
+        }
+
+        @media screen and (max-width: 992px) {
+            .user_text {
+                left: 10%;
+                top: 60%;
+                width: 200px; 
             }
 
-            to {
-                box-shadow: 0 0 5px var(--taki01), 0 0 10px var(--taki01), 0 0 15px var(--taki01), 0 0 20px var(--taki04),
-                    0 0 35px var(--taki04), 0 0 40px var(--taki04), 0 0 50px var(--taki04), 0 0 75px var(--taki04);
-            }
-        }
-
-        .mytext {
-            font-size: 1.2rem;
-            font-weight: 300;
-            line-height: 1.7;
-            letter-spacing: 2.5px;
-        }
-
-        .bg-aboutus {
-            background: linear-gradient(rgb(33, 37, 41) 15%, rgba(33, 37, 41, 0.8)35%, rgb(33, 37, 41) 85%);
-        }
-
-
-        @media screen and (max-width: 768px) {
-            .timeline-section::before {
-                left: -10px;
-                border: 5px solid var(--taki03);
+            .user_text .h1 {
+                font-size: 50px;
             }
 
-            .timeline-section-pointer::before {
-                top: -5px;
-                left: 2px;
-                width: 30px;
-                height: 30px;
-                background-color: rgb(231, 214, 167);
-                border: 5px solid var(--taki03);
-                animation: neon_ab 0.8s ease-in-out infinite alternate;
+            .user_text p {
+                font-size: 24px;
             }
 
-            .banner {
-                margin-top: 60px;
+            .section02_box01, .section02_box02, .section02_box03 {
+                width: 200px;
                 height: 200px;
-                background-position: center top;
-                background-size: 130%;
+                line-height: 200px;
             }
 
-            .ab_mb {
-                margin-bottom: 3rem;
+            .section02_box01 a{
+                font-size: 1.2rem;
+            }
+        }
+
+        @media screen and (max-width:767px) {
+            .section02_box01, .section02_box02, .section02_box03 {
+                width: 320px;
+                height: 320px;
+                line-height: 320px;
+            }
+
+            .section02_box01 a{
+                font-size: 24px;
             }
         }
     </style>
 </head>
 
-<body class="bg-aboutus text-light">
-    <!-- keep same nav on all page [v.0508]-->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-500 text-warning nvbar-fo" href="./07_Lin_TAKIGAWA_index.html">
-                <span class="fo-hover">滝川堂
-                    <span class="cg nvbar-fo-spEN">TAKIGAWA</span>
-                </span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./07_Lin_TAKIGAWA_index.html">首頁</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./07_Lin_TAKIGAWA_about.html">關於我們</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            商品分類
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- active for present page -->
-                            <li><a class="dropdown-item" href="./07_Lin_TAKIGAWA_product-JD.html">日式器皿</a></li>
-                            <li><a class="dropdown-item" href="./07_Lin_TAKIGAWA_product-BD.html">西洋餐具</a></li>
-                            <li><a class="dropdown-item" href="./07_Lin_TAKIGAWA_product-VS.html">花器</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="banner bg-cover"></div>
-    <div class="container">
-        <div class="timeline-section">
-            <div class="row mt-3 align-items-center timeline-section-pointer">
-                <div class="col-md-6 text-center">
-                    <div class="mytext">
-                        <div class="h3 about_co_L fw-700">關於我們<br>
-                            <small class=" about_co_2 fw-300 fs-6">ABOUT US</small>
-                        </div>
-                        <ul class="list-unstyled">
-                            <p>滝川堂是位於日本京都的一家具有悠久歷史的食器餐具專賣店，自1890年創立以來，一直致力於為客戶提供世界各地精緻、高品質的食器和餐具。店內陳列著各式各樣的精美商品，展現了悠久的製陶工藝和精湛的製作技術。
-                            </p>
-                            <p>滝川堂は日本の京都に位置する、歴史のある食器食器専門店です。1890年の創業以来、世界各地の精巧で高品質な食器や食器を提供することに力を注いでいます。店内にはさまざまな美しい商品が展示されており、長い陶芸技術と卓越した製作技術が示されています。
-                            </p>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="myimg bg-cover ab_mb"
-                        style="background-image: url(images/shaoziJP/fengmian/kyoto01.avif); height: 360px;"></div>
-                </div>
-            </div>
-            <div class="row mt-3 align-items-center flex-row-reverse timeline-section-pointer">
-                <div class="col-md-6 text-center">
-                    <div class="mytext">
-                        <div class="h3 about_co_3 fw-700 ">店家資訊<br>
-                            <small class="about_co_2 fw-300 fs-6">store info.</small>
-                        </div>
-                        <table class="text-start m-auto tb01">
-                            <tr>
-                                <td class="fw-500" style="width: 7.5rem;">会社名</td>
-                                <td>株式会社 滝川堂</td>
-                            </tr>
-                            <tr>
-                                <td class="fw-500">創業</td>
-                                <td>明治23年（1890年）</td>
-                            </tr>
-                            <tr>
-                                <td class="fw-500">所在地</td>
-                                <td>日本京都市中京区六角通堀川東入六角下之町545</td>
-                            </tr>
-                            <tr>
-                                <td class="fw-500">電話番号</td>
-                                <td>076-541-5393</td>
-                            </tr>
-                            <tr>
-                                <td class="fw-500"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="fw-500">營業時間</td>
-                                <td>上午10點至下午6點（周一至周六）</td>
-                            </tr>
-                            <tr>
-                                <td class="fw-500" style="height: 2rem;"></td>
-                                <td></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="myimg bg-cover ab_mb"
-                        style="background-image: url(./images/shaoziJP/fengmian/ab06.avif); height: 360px; background-position: center 65%;">
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-3 align-items-center timeline-section-pointer">
-                <div class="col-md-6 text-center">
-                    <div class="mytext">
-                        <div class="h3 about_co_L fw-700">經營理念<br>
-                            <small class="about_co_2 fw-300 fs-6">Business Philosophy</small>
-                        </div>
-                        <ul class="list-unstyled">
-                            <p>滝川堂秉持著「傳統與現代的融合」的經營理念，堅持傳承和發揚古老的製陶工藝，同時不斷尋求創新，結合現代設計理念，為客戶帶來獨一無二的食器和餐具體驗。我們相信每一件產品都應該是獨特的，能夠為用戶的生活增添美感和樂趣。
-                            </p>
-                            <p>滝川堂は、「伝統と現代の融合」という経営理念を持ち、古くからの陶芸技術を継承し発展させると同時に、常に新しいものを求め、現代のデザイン理念と融合させ、お客様にユニークな食器と食器体験を提供します。私たちは、すべての製品がユニークであり、ユーザーの生活に美しさと楽しさをもたらすべきだと信じています。
-                            </p>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="myimg bg-cover ab_mb"
-                        style="background-image: url(images/shaoziJP/fengmian/ab02.avif); height: 360px;"></div>
-                </div>
-            </div>
-            <div class="row mt-3 align-items-center flex-row-reverse timeline-section-pointer">
-                <div class="col-md-6 text-center">
-                    <div class="mytext">
-                        <div class="h3 about_co_3 fw-700">產品特色<br>
-                            <small class="about_co_2 fw-300 fs-6">Product Features</small>
-                        </div>
-                        <ul class="list-unstyled">
-                            <p>滝川堂店內的產品種類繁多，包括日本傳統的陶瓷器、磁器，以及來自世界各地的精美食器。我們的產品以精湛的工藝、優雅的設計和高品質的材料聞名。無論是日常使用還是作為禮物贈送，都能展現出獨特的品味和品質。
-                            </p>
-                            <p>滝川堂店内の商品は多岐にわたり、日本の伝統的な陶磁器や世界各地からの美しい食器が含まれています。当店の商品は、優れた技術、エレガントなデザイン、高品質の素材で知られています。日常の使用や贈り物としても、独特の味と品質を表現できます。
-                            </p>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="myimg bg-cover"
-                        style="background-image: url(images/shaoziJP/fengmian/ab12.jpg); height: 360px;"></div>
-                </div>
-            </div>
+<body class="bg-dark">
+    <div class="section01">
+        <div class="box01"></div>
+        <div class="box02"></div>
+        <div class="box03"></div>
+        <div class="box04"></div>
+        <div class="logo bg-cover"></div>
+        <div class="user_text">
+            <div class="h1">Lucca</div>
+            <hr>
+            <div class="h2">Software Engineer</div>
+            <p>Life has no limitations, except the ones you make.</p>
         </div>
     </div>
 
-    <!--Keep same footer on all page [v.0503]-->
-    <div class="footer mt-md-3 mt-4">
-        <div class="h6 text-bg-dark text-center py-3 fw-400 cg footer-bot">
-            Copyright© TAKIGAWA. All Right Reserved.
-            <span class="footer-word-rwd">/ <a href="./07_Lin-userPage.html" target="_blank"
-                    class="fo-hover fo-phone ft-a">design by XINGWEI LIN No.<span class="hk">7</span>, RWD Class</a>
-                /</span>
+    <div class="container mb-5">
+        <div class="h6 fw-600 text-muted mt-3 mt-md-5"></div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="section02_box01 bg-cover fo-hover ">
+                    <a href="./07_Lin_TAKIGAWA_index.html" target="_blank">
+                        <span class="jp fw-500">滝川堂</span>
+                        <span class="cg fw-600">TAKIGAWA</span>
+                    </a>
+                </div>      
+            </div>
+            <div class="col-md-4">
+                <div class="section02_box02 bg-cover">
+                    <a href="#" target="_blank">Portfolio 2</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="section02_box03 bg-cover">
+                    <a href="#" target="_blank">Portfolio 3</a>
+                </div>               
+            </div>
         </div>
     </div>
-
-    <!-- Back to top button [v.0502]-->
-    <button type="button" class="btn btn-lg" id="btn-back-to-top">
-        <div class="btn-back-t"></div>
-    </button>
-
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/btn.back.to.top.js"></script>
 </body>
 
 </html>
