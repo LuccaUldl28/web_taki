@@ -1,0 +1,373 @@
+/* 
+ *  目前版本: v.0502
+ *  練習作品專用CSS: 滝川堂 TAKIGAWA
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Hina+Mincho&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+HK:wght@200..900&family=Noto+Serif+JP&family=Shippori+Mincho+B1&display=swap');
+
+body {
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-100 {
+    font-weight: 100;
+}
+
+/* 自定義常用顏色 */
+:root {
+
+    /* TAKIGAWA系列顏色 */
+    --taki01: rgba(228, 199, 114, 1);
+    --taki02: rgba(207, 182, 104, 1);
+    --taki03: rgba(204, 162, 36, 1);
+    --taki04: rgba(255, 153, 80, 0.7);
+
+
+    --bgcolor01: #F5E2D4;
+
+    --mycolor01: #EB8F90;
+    --mycolor02: #FFB471;
+    --mycolor03: #ADBED2;
+    --mycolor04: #970ea3;
+    --mycolor05: #A0BB55;
+
+    --crComfy01: #E1dcd9;
+    --crComfy02: #8F8681;
+    --crComfy03: #A67F78;
+    --crComfy04: #32435F;
+
+    /* Snakeskin & Scales */
+    --crSnsk01: #ead6bd;
+    --crSnsk02: #a88661;
+    --crSnsk03: #504e63;
+    --crSnsk04: #00142F;
+
+    /* Angular Kaleidoscope */
+    --crAK01: #E4DACE;
+    --crAK02: #e5bb4b;
+    --crAK03: #498eaf;
+    --crAK04: #631f16;
+
+    /* Icy Stone */
+    --IS01: #a6c2ce;
+    --IS02: #9c8f96;
+    --IS03: #ebc57c;
+    --IS04: #6b799e;
+
+
+    --textcolor01: #12406A;
+    --textcolor02: #eeeeee;
+    --textcolor03: #FFF;
+    --button01: #BB7748;
+    --linese:rgba(85,55,26,1);
+}
+
+/* navbar 自定義參數 */
+/* 左上 LOGO 整體 */
+.nvbar-fo {
+    font-family: "Noto Serif JP", serif;
+    font-size: 1.7rem;
+    letter-spacing: 8px;
+    margin-left: 3%;
+}
+
+/* 左上 LOGO 英文部分-span */
+.nvbar-fo-spEN {
+    letter-spacing: 10px;
+}
+
+/* LOGO hover 效果 */
+.fo-hover:hover {
+    color: var(--taki02);
+    animation: neon1 0.8s ease-in-out infinite alternate;
+}
+
+/* 煤氣燈效果定義 */
+/* 搭配 animation: neon1 0.8s ease-in-out infinite alternate; 執行動畫 */
+@keyframes neon1 {
+    from {
+        text-shadow: 0 0 10px var(--taki01), 0 0 20px var(--taki01), 0 0 30px var(--taki01), 0 0 40px var(--taki04),
+            0 0 70px var(--taki04), 0 0 80px var(--taki04), 0 0 100px var(--taki04), 0 0 150px var(--taki04);
+    }
+
+    to {
+        text-shadow: 0 0 5px var(--taki01), 0 0 10px var(--taki01), 0 0 15px var(--taki01), 0 0 20px var(--taki04),
+            0 0 35px var(--taki04), 0 0 40px var(--taki04), 0 0 50px var(--taki04), 0 0 75px var(--taki04);
+    }
+}
+
+/* 字體集 */
+/* 日文細明體 */
+.jp {
+    font-family: "Noto Serif JP", serif;
+}
+
+/* 英文細明體 */
+.cg {
+    font-family: "Cormorant Garamond", serif;
+}
+
+/* 中文細明體 */
+.hk {
+    font-family: "Noto Serif HK", serif;
+}
+
+/* body 預設中文黑體 */
+.bdcn {
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+/* 商品分類 */
+/* 商品分類-地圖 */
+.product_map {
+    color: var(--textcolor01);
+}
+
+.product_map_en {
+    font-size: 0.8rem;
+    color: rgb(155, 155, 155);
+    font-weight: 600;
+}
+
+/* 商品分類-商品清單 */
+.product_card {
+    flex: 1;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(51, 70, 80, 0.5);
+}
+
+.product_card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.product_item a {
+    text-decoration: none;
+}
+
+.product_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 3s ease;
+    position: relative;
+    z-index: -1;
+}
+
+.product_info {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 20px;
+    color: var(--textcolor03);
+    transition: background-color 1.5s ease;
+}
+
+.product_detail {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 1.5s ease, opacity 1s ease;
+}
+
+.product_btn_buy {
+    background-color: none;
+    color: var(--taki01);
+    border: 1px solid var(--taki01);
+}
+
+.product_btn_buy:hover {
+    background-color: var(--taki01);
+}
+
+.product_card:hover {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 80%);
+}
+
+.product_card:hover .product_img {
+    transform: scale(1.2);
+}
+
+.product_card:hover .product_detail {
+    max-height: 78px;
+    opacity: 1;
+}
+
+/* about 頁面使用配色 */
+.about_co_1{
+    color: var(--IS01);
+}
+
+.about_co_2{
+    color: var(--IS02);
+}
+
+.about_co_3{
+    color: var(--IS03);
+}
+
+.about_co_4{
+    color: var(--IS04);
+}
+
+.about_co_L{
+    color: var(--taki03);
+}
+
+/* 購物頁面 */
+/* 購物頁面-價格文字 */
+.priceDet {
+    font-size: 2rem;
+    color: var(--taki03);
+}
+
+/* 購物頁面-購買按鈕 */
+.btnBUY {
+    background-color: var(--taki01);
+}
+
+.btnBUY:hover {
+    background-color: none;
+    color: var(--taki02);
+    border: 1px solid var(--taki01);
+}
+
+/* 購物頁面-商品描述的底線裝飾 */
+.abPG {
+    width: 2rem;
+    border-top: 4px solid var(--taki01);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+}
+
+/* footer 自定義參數 */
+/* footer 貼合底部, 文字間隔 */
+.footer-bot {
+    position: relative;
+    bottom: -2vh;
+    letter-spacing: 0.5px
+}
+
+/* footer a 文字參數 */
+.ft-a {
+    color: white;
+    text-decoration: none;
+}
+
+.tb01 tr td {
+    vertical-align: top;
+    ;
+}
+
+/* back to top button */
+#btn-back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: none;
+    border: none;
+    background: none;
+}
+
+.btn-back-t {
+    background-image: url(../images/svg/icons8-double-up-96-1.png);
+    background-size: cover;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.btn-back-t:hover {
+    background-image: url(../images/svg/icons8-double-up-96-2.png);
+    background-color: var(--taki01);
+    transition: background-image 1.2s linear;
+    animation: backtop01 1.7s ease-in-out infinite alternate;
+    filter: contrast(100%) brightness(110%);
+}
+
+@keyframes backtop01 {
+    from {
+        box-shadow: 0 0 10px var(--taki01), 0 0 20px var(--taki01), 0 0 30px var(--taki01), 0 0 40px var(--taki04),
+            0 0 70px var(--taki04), 0 0 80px var(--taki04), 0 0 100px var(--taki04), 0 0 150px var(--taki04);
+    }
+
+    to {
+        box-shadow: 0 0 5px var(--taki01), 0 0 10px var(--taki01), 0 0 15px var(--taki01), 0 0 20px var(--taki04),
+            0 0 35px var(--taki04), 0 0 40px var(--taki04), 0 0 50px var(--taki04), 0 0 75px var(--taki04);
+    }
+}
+
+
+
+/* RWD 768px 以下時變化 */
+@media screen and (max-width: 768px) {
+    /* back to top button 手機版位置 */
+    #btn-back-to-top {
+        bottom: 65px;
+        right: 20px;
+    }
+
+    /* footer 在版面縮小時的文字排版(斷行) */
+    .footer-word-rwd {
+        display: inline-flex;
+        flex-grow: 1;
+    }
+
+    /* footer a 在手機版時維持動畫效果 */
+    .fo-phone {
+        color: var(--taki02);
+        animation: neon2 1.7s ease-in-out infinite alternate;
+    }
+
+    @keyframes neon2 {
+        from {
+            text-shadow: 0 0 10px var(--taki01), 0 0 20px var(--taki01)var(--taki01), 0 0 40px var(--taki04),
+                0 0 70px var(--taki04), 0 0 80px var(--taki04), 0 0 100px var(--taki04), 0 0 200px var(--taki04);
+        }
+
+        to {
+            text-shadow: 0 0 5px var(--taki01), 0 0 10px var(--taki01), 0 0 35px var(--taki01), 0 0 20px var(--taki04),
+                0 0 85px var(--taki04), 0 0 60px var(--taki04), 0 0 80px var(--taki04), 0 0 120px var(--taki04);
+        }
+    }
+}
